@@ -1,0 +1,95 @@
+:root{
+  --bg:#70c5ce;
+  --ground:#de9a3a;
+  --panel:#ffffffee;
+  --accent:#ffdd57;
+  --muted:rgba(0,0,0,0.55);
+  --glass: rgba(255,255,255,0.85);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  background: linear-gradient(180deg,#70c5ce 0%, #59b6c2 60%, #4aa6b7 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  -webkit-font-smoothing:antialiased;
+  color:#042;
+}
+
+/* Top UI */
+#uiTop{
+  position:fixed;
+  top:14px;
+  left:14px;
+  right:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:30;
+}
+.brand{
+  font-weight:800;
+  color:#fff;
+  text-shadow:0 4px 18px rgba(0,0,0,0.25);
+  letter-spacing:0.6px;
+}
+.scoreWrap{ display:flex; gap:10px; align-items:center; color:#fff }
+#score{ font-weight:900; font-size:20px; padding:6px 12px; background:rgba(255,255,255,0.12); border-radius:999px }
+#best{ font-size:13px; color:#fff; opacity:0.9}
+
+/* Canvas */
+#game{
+  width:700px;
+  max-width:92vw;
+  height:500px;
+  max-height:75vh;
+  background: linear-gradient(#87e0ff, #54c3ff 60%, #3ea7e0 100%);
+  border-radius:12px;
+  box-shadow: 0 14px 50px rgba(3,40,70,0.35), inset 0 2px 0 rgba(255,255,255,0.06);
+  display:block;
+}
+
+/* Overlays */
+.overlay{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:40;
+}
+.overlay .panel{
+  width:420px; max-width:90vw;
+  background:var(--panel);
+  border-radius:12px;
+  padding:22px;
+  box-shadow:0 12px 40px rgba(3,40,70,0.25);
+  text-align:center;
+}
+.overlay .panel h1{ margin:4px 0 8px 0; font-size:28px; color:#123 }
+.overlay .panel p{ margin:0 0 14px 0; color:var(--muted) }
+.btn{
+  padding:10px 16px;
+  border-radius:10px;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+  margin:6px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.btn.primary{
+  background: linear-gradient(90deg,#ffd54a,#ffca28);
+  color:#2a1b00;
+  box-shadow: 0 8px 24px rgba(255,200,60,0.18);
+}
+.controls{ display:flex; justify-content:center; gap:12px; align-items:center; margin-bottom:8px }
+.hint{ font-size:13px; color:var(--muted) }
+
+/* Hidden helper */
+.hidden{ display:none !important }
+
+/* small screens */
+@media (max-width:520px){
+  #game{ height:64vh }
+  .overlay .panel{ width:92vw }
+}

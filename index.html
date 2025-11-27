@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Floppy Bird — HTML5 Canvas Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="uiTop">
+    <div class="brand">Floppy Bird</div>
+    <div class="scoreWrap">
+      <div id="score">0</div>
+      <div id="best">Best: 0</div>
+    </div>
+  </div>
+
+  <canvas id="game"></canvas>
+
+  <div id="overlay" class="overlay">
+    <div class="panel">
+      <h1>Floppy Bird</h1>
+      <p id="overlayMsg">Tap / Click / Press Space to flap</p>
+      <div class="controls">
+        <button id="readyBtn" class="btn primary">Ready</button>
+        <button id="muteBtn" class="btn">Mute</button>
+      </div>
+      <div class="hint">Use Space or Tap — try to pass as many pipes as you can!</div>
+    </div>
+  </div>
+
+  <div id="gameOver" class="overlay hidden">
+    <div class="panel">
+      <h1 id="endTitle">Game Over</h1>
+      <p id="endScore">Score: 0</p>
+      <div class="controls">
+        <button id="retryBtn" class="btn primary">Play Again</button>
+      </div>
+      <div class="hint">Best: <span id="endBest">0</span></div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
